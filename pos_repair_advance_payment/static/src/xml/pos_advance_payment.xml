@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+	<t t-name="AdvancePaiementButtonWidget">
+        <t t-if="widget.pos.config.pos_advance_payment">
+            <div class="header-button repair-list-button">
+                <i class="fa fa-eur" aria-hidden="true" title="acompte"></i>
+            </div>
+        </t>
+    </t>
+
+    <t t-name="AddRepairAdvancePaymentPopup">
+		<style type="text/css">
+			.field-popup {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.pos .popup .body {
+				font-size: 15px;
+			}
+			.pos .modal-dialog .popup {
+				text-align: initial;
+			}
+			.pos .popup input, .pos .popup-input {
+				min-height: 0;
+			}
+			.invisible {
+				display: none;
+			}
+		</style>
+		
+        <div class="modal-dialog">
+				<div class="popup popup-confirm" style="height: 450px !important;">
+					<p class="title">Bon de réparation</p>
+					<div class="body" style="height: 300px;">
+						<!-- <p style="color: #0075AC;">Entrez la somme ici</p> -->
+						<p class="field-popup">
+							<label> Article à réparer: </label><input id="product_repair" type="text" class="input-field" style="height: 30px; width: 60%;"></input>
+						</p>
+						<p class="field-popup">
+							<label> Acompte:  </label><input id="advance_payment" type="text" class="input-field" name="code" style="height: 30px; width: 60%;"></input>
+						</p>
+						<p class="field-popup">
+							<label> Numéro de série: </label><input id="serial_number" type="text" class="input-field" style="height: 30px; width: 60%;"></input>
+						</p>
+						<p class="field-popup">
+							<label> Appareil déposé: </label><input id="device_dropped" type="checkbox" class="input-field" style="height: 20px; width: 60%;"></input>
+						</p>
+						<p class="field-popup invisible" id="emplacement">
+							<label> Emplacement: </label><input id="location_id" type="text" class="input-field" style="height:30px; width:60%"></input>
+						</p>
+
+
+					</div>
+					<div class="footer" style="background-color: rgb(110,200,155); color: #fff;">
+							<div class="button cancel" id="cancel_coupon_code" style="background-color: #0075AC; color: #fff;">
+									Cancel 
+							</div>
+							<div class="button confirm" id="create_advance_payment" style="background-color: #0075AC; color: #fff;">
+									Apply 
+							</div>
+					</div>
+				</div>
+			</div>
+    </t>
+
+</templates>
