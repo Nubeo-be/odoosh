@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<record id="skit_pos_config_view_form" model="ir.ui.view">
+			<field name="name">pos.config.form.inherit</field>
+			<field name="model">pos.config</field>
+			<field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='invoice_journal_id']" position="after">
+					<label string="Paylater Journal" for="paylater_journal_id" class="col-lg-3 o_light_label"/>
+					<field name="paylater_journal_id"
+                                                domain="[('is_pay_later', '=', True)]"
+                                               attrs="{'required': [('module_account', '=', True)]}"
+                                               context="{'default_company_id': company_id}"/>
+				</xpath>
+			</field>
+		</record>
+</odoo>
